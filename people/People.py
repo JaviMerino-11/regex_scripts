@@ -10,12 +10,13 @@ class People(object):
 
     def show_personal_data(self):
         profile_pattern = re.compile(
-            "(?P<name>([A-ZÀ-ÿ][a-z\s]*)+) (?P<first_surname>([A-ZÀ-ÿ][a-z\s]*)+) (?P<last_surname>([A-ZÀ-ÿ][a-z\s]*)?)")
+            "^(?P<name>([A-ZÀ-ÿ][a-zà-ÿ]*)) (?P<first_surname>([A-ZÀ-ÿ][a-zà-ÿ]*)) "
+            "(?P<last_surname>([A-ZÀ-ÿ][a-zà-ÿ]*)?)$")
 
         match_name = re.match(profile_pattern, self.full_name)
 
         if match_name:
-            print('Name: %s\nSurname: %s %s' % (
+            print('Name: %s\nFirst surname: %s\nLast surname: %s' % (
                 match_name.group('name'), match_name.group('first_surname'), match_name.group('last_surname')))
         else:
             print('Formate Not Allowed. Check conditions')

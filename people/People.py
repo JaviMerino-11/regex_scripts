@@ -10,7 +10,7 @@ class People(object):
 
     def show_personal_data(self):
         profile_pattern = re.compile(
-            "^(?P<name>([A-ZÀ-ÿ][a-zà-ÿ]*)) (?P<first_surname>([A-ZÀ-ÿ][a-zà-ÿ]*)) "
+            "^(?P<name>([A-ZÀ-ÿ][a-zà-ÿ]*)) (?P<first_surname>([A-ZÀ-ÿ][a-zà-ÿ\.]*)) "
             "(?P<last_surname>([A-ZÀ-ÿ][a-zà-ÿ]*)?)$")
 
         match_name = re.match(profile_pattern, self.full_name)
